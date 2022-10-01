@@ -99,7 +99,6 @@ const DESCRIPTIONS = [
 
 const POST_COUNT = 25;
 
-
 const getRandomArrayElement = (array) => {
     return array[getRandomIntInclusive(0, array.length -1)];
 }
@@ -113,19 +112,36 @@ const generateComment = () => {
     };
 };
 
+
+
+let num = getRandomIntInclusive(1, 10);
+
 const generatePost = () => {
+    const comments = [];
+
+    let i = 0;
+    while (i < 10) {
+        comments.push(generateComment());
+        i++;
+    }
+
+    ;
+
+
+    
+    
+
     return {
         id: getRandomIntInclusive(1, POST_COUNT),
         url: `./photos/${getRandomIntInclusive(1, POST_COUNT)}.jpg`,
         description: getRandomArrayElement(DESCRIPTIONS),
         likes: 15,
         comments: [
-            generateComment(),
-            generateComment(),
-            generateComment(),
-        ]
+            
+        ],
     };
 };
+
 
 
 const generatePosts = (count) => {
@@ -143,6 +159,7 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
+
 
 
 
