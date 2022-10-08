@@ -1,5 +1,3 @@
-
-
 const generateComment = () => {
     return {
         id: getRandomIntInclusive(1, 10),
@@ -9,13 +7,10 @@ const generateComment = () => {
     };
 };
 
-let num = getRandomIntInclusive(1, 10); 
-
 const generatePost = () => {
     const comments = [];
-
     let i = 0;
-    while (i < 10) {
+    while (i < getRandomIntInclusive(0,10)) {
         comments.push(generateComment());
         i++;
     };
@@ -25,9 +20,7 @@ const generatePost = () => {
         url: `./photos/${getRandomIntInclusive(1, POST_COUNT)}.jpg`,
         description: getRandomArrayElement(DESCRIPTIONS),
         likes: 15,
-        comments: [
-            
-        ],
+        comments: comments,
     };
 };
 
