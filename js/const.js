@@ -37,3 +37,4 @@ const DESCRIPTIONS = [
     'desc-7',    
 ];
 
+const POST_COUNT = 25;
