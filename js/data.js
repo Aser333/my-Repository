@@ -1,5 +1,3 @@
-const POST_COUNT = 25;
-
 
 
 const generateComment = () => {
