@@ -46,7 +46,7 @@ const generatePost = () => {
     };
 
     return {
-        id: usedIds,
+        id: generateId,
         url: `./photos/${getRandomIntInclusive(1, POST_COUNT)}.jpg`,
         description: getRandomArrayElement(DESCRIPTIONS),
         likes: 15,
