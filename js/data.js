@@ -1,9 +1,6 @@
 const usedCommentIds = [];
 const usedPostIds = [];
 
-
-
-
 const generateComment = () => {
     
     const generateCommentId = () => {
