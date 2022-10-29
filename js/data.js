@@ -6,14 +6,14 @@ const usedPostIds = [];
 
 const generateComment = () => {
     
-    const generateCommentId = [];
+    const generateCommentId = () => {
         let usedId = getRandomIntInclusive(0, 250);
         while (usedCommentIds.includes(usedId)) {
         usedId = getRandomIntInclusive(0, 250)
         };
         usedCommentIds.push(usedId);
         return usedId;
-
+};
         return {
         id: generateCommentId(),
         avatar: `./img/avatar-${getRandomIntInclusive(1, 6)}.jpg`,
