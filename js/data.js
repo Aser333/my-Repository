@@ -1,29 +1,22 @@
-const usedIds = [];
+const usedCommentIds = [];
 const usedPostIds = [];
 
-const generateCommentId = () => {
-    let usedId = getRandomIntInclusive(0, 250);
-    while (usedIds.includes(usedId)) {
-        usedId = getRandomIntInclusive(0, 250)
-    };
-    usedIds.push(usedId);
-    return usedId;
-};
+
 
 
 const generateComment = () => {
     
+    const generateCommentId = [];
+        let usedId = getRandomIntInclusive(0, 250);
+        while (usedCommentIds.includes(usedId)) {
+        usedId = getRandomIntInclusive(0, 250)
+        };
+        usedCommentIds.push(usedId);
+        return usedId;
 
-    let usedId = getRandomIntInclusive(1, 250);
-    while (usedIds.includes(usedId)) {
-        usedId = getRandomIntInclusive(1, 250);
-        
-    };
-    usedIds.push(usedId);
-
-    return {
+        return {
         id: generateCommentId(),
-        avatar: `./img/avatar-${usedIds}.jpg`,
+        avatar: `./img/avatar-${getRandomIntInclusive(1, 6)}.jpg`,
         message: getRandomArrayElement(MESSAGES),
         name: getRandomArrayElement(NAMES),
     };
