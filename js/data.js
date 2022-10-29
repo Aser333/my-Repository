@@ -1,4 +1,5 @@
 const usedIds = [];
+const usedPostIds = [];
 
 const generateId = () => {
     let usedId = getRandomIntInclusive(0, 250);
@@ -8,6 +9,7 @@ const generateId = () => {
     usedIds.push(usedId);
     return usedId;
 };
+
 
 const generateComment = () => {
     
@@ -27,7 +29,17 @@ const generateComment = () => {
     };
 };
 
+const generatePostId = () => {
+    let usedPostId = getRandomIntInclusive(0, 250);
+    while (usedPostIds.includes(usedPostId)) {
+        usedPostId = getRandomIntInclusive(0, 250)
+    };
+    usedPostIds.push(usedPostId);
+    return usedPostId;
+};
+
 const generatePost = () => {
+    
     const comments = [];
     let i = 0;
     while (i < getRandomIntInclusive (0,10)) {
@@ -36,7 +48,7 @@ const generatePost = () => {
     };
 
     return {
-        id: generateId(),
+        id: generatePostId(),
         url: `./photos/${getRandomIntInclusive(1, POST_COUNT)}.jpg`,
         description: getRandomArrayElement(DESCRIPTIONS),
         likes: 15,
