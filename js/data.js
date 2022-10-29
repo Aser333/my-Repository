@@ -2,14 +2,13 @@ const usedCommentIds = [];
 const usedPostIds = [];
 
 const generateComment = () => {
-    
     const generateCommentId = () => {
-        let usedId = getRandomIntInclusive(0, 250);
-        while (usedCommentIds.includes(usedId)) {
-        usedId = getRandomIntInclusive(0, 250)
+        let commentId = getRandomIntInclusive(0, 250);
+        while (usedCommentIds.includes(commentId)) {
+        commentId = getRandomIntInclusive(0, 250)
         };
-        usedCommentIds.push(usedId);
-        return usedId;
+        usedCommentIds.push(commentId);
+        return commentId;
 };
         return {
         id: generateCommentId(),
@@ -57,3 +56,4 @@ const generatePosts = (count) => {
 };
 
 console.log(generatePosts(26));
+
