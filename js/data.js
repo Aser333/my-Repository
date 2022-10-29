@@ -1,37 +1,13 @@
 const usedIds = [];
-// const usd = [];
-   
-// const generateId = () => {
-//     const id_2 = [];
-//     for (let i = 0; i < 26; i++) {
-//         id_2.push(getRandomIntInclusive(1, 26));
-//         if (id_2.includes(usedIds)) {
-//             usedIds.push(id_2);
-//         } else {
-            
-//         };
-//     };
-// };
-
-// 1. сгенерировать случайный id
-// 2. проверить его уникальность
-// (да) пункт 1
-// (нет) записать его в usedIds
-// передать в объект
-
-// includes
-
 
 const generateId = () => {
-    let usd = getRandomIntInclusive(0,25);
-    while (usedIds.includes(usd)) {
-        usd = getRandomIntInclusive(0,25);
+    let usedId = getRandomIntInclusive(0,25);
+    do while (usedIds.includes(usedId)) {
+        usedId = getRandomIntInclusive(0,25)
     };
-    usedIds.push(usd);
-    return usd;
+    usedIds.push(usedId);
+    return usedId;
 };
-
-console.log(generateId());
 
 const generateComment = () => {
     const avatars = [];
@@ -46,14 +22,14 @@ const generateComment = () => {
         };
     };
 
-    let usd = getRandomIntInclusive(1,250);
-    while (usedIds.includes(usd)) {
-        usd = getRandomIntInclusive(1,250);
+    let usedId = getRandomIntInclusive(1,250);
+    while (usedIds.includes(usedId)) {
+        usedId = getRandomIntInclusive(1,250);
     };
-    usedIds.push(usd);
+    usedIds.push(usedId);
 
     return {
-        id: usd,
+        id: generateId,
         // avatar: `./img/avatar-${getRandomIntInclusive(1, 10)}.jpg`,
         avatar: `./img/avatar-${usedIds}.jpg`,
         message: getRandomArrayElement(MESSAGES),
