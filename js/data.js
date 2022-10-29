@@ -1,7 +1,7 @@
 const usedIds = [];
 const usedPostIds = [];
 
-const generateId = () => {
+const generateCommentId = () => {
     let usedId = getRandomIntInclusive(0, 250);
     while (usedIds.includes(usedId)) {
         usedId = getRandomIntInclusive(0, 250)
@@ -22,7 +22,7 @@ const generateComment = () => {
     usedIds.push(usedId);
 
     return {
-        id: generateId(),
+        id: generateCommentId(),
         avatar: `./img/avatar-${usedIds}.jpg`,
         message: getRandomArrayElement(MESSAGES),
         name: getRandomArrayElement(NAMES),
