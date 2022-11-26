@@ -1,23 +1,25 @@
 const usedCommentIds = [];
 const usedPostIds = [];
-
   
 const generateCommentId = () => {
-
     let commentId = getRandomIntInclusive(0, 250);
     while (usedCommentIds.includes(commentId)) {
-    commentId = getRandomIntInclusive(0, 250)
-    };
+        commentId = getRandomIntInclusive(0, 250)
+    }
+
     usedCommentIds.push(commentId);
+    
     return commentId;
 };
-    return {
 
-    id: generateCommentId(),
-    avatar: `./img/avatar-${getRandomIntInclusive(1, 6)}.jpg`,
-    message: getRandomArrayElement(MESSAGES),
-    name: getRandomArrayElement(NAMES),
-};
+const generateComment = () => {
+    return {
+        id: generateCommentId(),
+        avatar: `./img/avatar-${getRandomIntInclusive(1, 6)}.jpg`,
+        message: getRandomArrayElement(MESSAGES),
+        name: getRandomArrayElement(NAMES),
+    };
+}
 
 
 const generatePostId = () => {
@@ -27,16 +29,17 @@ const generatePostId = () => {
     };
 
     usedPostIds.push(usedPostId);
+
     return usedPostId;
 };
 
 const generatePost = () => {
     
     const comments = [];
-    
+
     let i = 0;
     while (i < getRandomIntInclusive (0, 10)) {
-        comments.push(generateCommentId());
+        comments.push(generateComment());
         i++;
     };
 
