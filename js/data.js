@@ -2,6 +2,7 @@ const usedCommentIds = [];
 const usedPostIds = [];
 
 const generateComment = () => {
+    
     const generateCommentId = () => {
         let commentId = getRandomIntInclusive(0, 250);
         while (usedCommentIds.includes(commentId)) {
@@ -11,6 +12,7 @@ const generateComment = () => {
         return commentId;
 };
         return {
+            
         id: generateCommentId(),
         avatar: `./img/avatar-${getRandomIntInclusive(1, 6)}.jpg`,
         message: getRandomArrayElement(MESSAGES),
@@ -37,6 +39,7 @@ const generatePost = () => {
     };
 
     return {
+        
         id: generatePostId(),
         url: `./photos/${getRandomIntInclusive(1, POST_COUNT)}.jpg`,
         description: getRandomArrayElement(DESCRIPTIONS),
@@ -56,4 +59,5 @@ const generatePosts = (count) => {
 };
 
 console.log(generatePosts(26));
+
 
